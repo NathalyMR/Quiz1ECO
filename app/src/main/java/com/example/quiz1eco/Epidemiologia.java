@@ -44,8 +44,8 @@ public class Epidemiologia extends AppCompatActivity {
                     Log.e(">>>", "" + Valor);
 
                     Intent i = new Intent(this, Sintomas.class);
-                    i.putExtra("nexoCal", Valor);
-                    i.putExtra("name", nombre);
+                    i.putExtra("resultado", Valor);
+                    i.putExtra("nombre", nombre);
                     i.putExtra("id", id);
                     startActivity(i);
                     finish();

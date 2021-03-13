@@ -19,8 +19,8 @@ public class Sintomas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sintomas);
 
-        resultado = getIntent().getExtras().getInt("nexoCal");
-        nombre = getIntent().getExtras().getString("name");
+        resultado = getIntent().getExtras().getInt("resultado");
+        nombre = getIntent().getExtras().getString("nombre");
         id = getIntent().getExtras().getString("id");
 
         Continuar3 = findViewById(R.id.Continuar3);
@@ -39,12 +39,12 @@ public class Sintomas extends AppCompatActivity {
 
         Continuar3.setOnClickListener(
                 (v) -> {
-                    sintomasCalification(Fiebre);
-                    sintomasCalification(DGarganta);
-                    sintomasCalification(CNasal);
-                    sintomasCalification(Tos);
-                    sintomasCalification(Fatiga);
-                    sintomasCalification(DRespiratoria);
+                    calificacion(Fiebre);
+                    calificacion(DGarganta);
+                    calificacion(CNasal);
+                    calificacion(Tos);
+                    calificacion(Fatiga);
+                    calificacion(DRespiratoria);
 
                     SharedPreferences preferences = getSharedPreferences("encuesta", MODE_PRIVATE);
                     int total = resultado + paciente;
@@ -61,7 +61,7 @@ public class Sintomas extends AppCompatActivity {
 
     }
 
-    private void sintomasCalification(CheckBox check) {
+    private void calificacion(CheckBox check) {
         Valor = false;
         if (check.isChecked() && !Valor) {
             paciente = paciente + 4;

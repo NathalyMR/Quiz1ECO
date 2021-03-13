@@ -11,7 +11,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private Button Registrar;
-    private TextView Registros;
+    private TextView Registro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Registrar = findViewById(R.id.Registrar);
-        Registros = findViewById(R.id.listaRegistro);
+        Registro = findViewById(R.id.Registro);
 
         listaUsuarios();
 
@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void listaUsuarios(){
         SharedPreferences preferences = getSharedPreferences("encuesta", MODE_PRIVATE);
-        String usuarios = preferences.getString("nombre+calificacion", "no hay encuestados");
-        Registros.setText(usuarios);
+        String usuarios = preferences.getString("nombre+calificacion", "No hay encuestados");
+        Registro.setText(usuarios);
     }
 
     @Override

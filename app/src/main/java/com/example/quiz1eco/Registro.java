@@ -28,10 +28,10 @@ public class Registro extends AppCompatActivity {
                 (v) -> {
                     nombre = Nombre.getText().toString();
                     id = ID.getText().toString();
-                    validation();
+                    validacion();
                     if (numero) {
                         Intent i = new Intent(this, Epidemiologia.class);
-                        i.putExtra("name", nombre);
+                        i.putExtra("nombre", nombre);
                         i.putExtra("id", id);
                         startActivity(i);
                         finish();
@@ -40,7 +40,7 @@ public class Registro extends AppCompatActivity {
         );
     }
 
-    protected void validation() {
+    protected void validacion() {
         numero = true;
         if (nombre == null || nombre.isEmpty() || id == null || id.isEmpty()) {
             Toast.makeText(this, "Hay campos vacíos", Toast.LENGTH_LONG).show();
